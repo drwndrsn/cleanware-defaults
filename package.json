@@ -1,11 +1,10 @@
 {
   "name": "cleanware-defaults",
-  "private": true,
   "version": "0.0.1",
   "description": "A bunch of common filters for the cleanware module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -21,5 +20,9 @@
   "dependencies": {
     "validator": "^8.2.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "cleanware": "^0.1.0",
+    "next-stub": "^0.2.2"
+  }
 }

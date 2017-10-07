@@ -2,15 +2,9 @@ const validator = require('validator')
 
 let filters = {
     phone: [
-        (s) => {      
-            return s.replace(/\D/g, '') // remove all non-digits
-        },
-        (s) => {
-            return s.length === 11 ? s.replace(/^1/,'') : s
-        },
-        (s) => {
-            return (s.length === 10) ? s : 0
-        }
+        s => s.replace(/\D/g, ''), // remove all non-digits,
+        s => s.length === 11 ? s.replace(/^1/,'') : s,
+        s => s.length === 10 ? s : 0
         // standard formatting here
     ],
     name: [

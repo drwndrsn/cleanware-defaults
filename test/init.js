@@ -6,7 +6,7 @@ function filterTest (req, res, callback) {
 
     var req = req || {body: {}},
         res = res || {locals: {}},
-        calllback = callback || function (err, req, res) {}
+        callback = callback || function (err, req, res) {}
 
     stub(cleanware, req, res, callback)
 }

@@ -1,26 +1,36 @@
-const f = require('./template'),
+const ƒ = require('./init'),
     chai = require('chai'),
         expect = chai.expect
 
 const ø = undefined
 
-var req = {body: {
-    phone_plusOneAreaCode: "+1 (904) 555-6878",
-    contactInfo: {
-        phone_nestedCell: "(888) 555-1111"
+describe('phone', () => {
+    let req = {
+            body: {
+                phone_plusOneAreaCode: "+1 (904) 555-6878",
+                contactInfo: {
+                    phone_nestedCell: "(888) 555-1111"
+                }
+            }
     }
-}}
 
-f(req,ø,(err, req, res) => {
-    describe('phone transformations', () => {
+    ƒ(req,ø,(err, req, res) => {
         
-        it('should strip and reduce to 10 digits', () => {
+        it('strip and reduce to 10 digits', () => {
             expect(req.body.phone_plusOneAreaCode).to.equal('9045556878')
         })
 
-        it('should find a nested input', () => {
+        it('process nested input', () => {
             expect(req.body.contactInfo.phone_nestedCell).to.equal('8885551111')
         })
     })
-    
+
+    req = {body: {phone_bad: '1911572'}}
+
+    ƒ(req,ø,(err, req, res) => {
+
+        it('fail on a bad phone', () => {
+            expect(err).to.exist
+        })
+    })
 })

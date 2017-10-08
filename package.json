@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
-    "cleanware": "^0.1.0",
+    "cleanware": "^0.1.1",
     "next-stub": "^0.2.2"
   }
 }

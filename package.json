@@ -1,6 +1,6 @@
 {
   "name": "cleanware-defaults",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A bunch of common filters for the cleanware module",
   "main": "index.js",
   "scripts": {
